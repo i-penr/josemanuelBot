@@ -1,0 +1,430 @@
+[
+    {
+        "fileName": "can",
+        "difficulty": "facil",
+        "possibleSolutions": ["australia"]
+    },
+    {
+        "fileName": "sop",
+        "difficulty": "facil",
+        "possibleSolutions": ["brasil", "brazil"]
+    },
+    {
+        "fileName": "sir",
+        "difficulty": "facil",
+        "possibleSolutions": ["canada", "canadá"]
+    },
+    {
+        "fileName":  "kek",
+        "difficulty": "facil",
+        "possibleSolutions":["república checa", "republica checa", "czech republic", "chequia"]
+    },
+    {
+        "fileName": "egipto",
+        "difficulty": "facil",
+        "possibleSolutions": ["egypt", "egipto"]
+    },
+    {
+        "fileName": "estonia",
+        "difficulty": "facil",
+        "possibleSolutions": ["estonia"]
+    },
+    {
+        "fileName": "francia",
+        "difficulty": "facil",
+        "possibleSolutions":  ["france", "francia"]
+    },
+    {
+        "fileName": "finlandia",
+        "difficulty": "facil",
+        "possibleSolutions": ["finland", "finlandia"]
+    },
+    {
+        "fileName": "italia",
+        "difficulty": "facil",
+        "possibleSolutions": ["italy", "italia"]
+    },
+    {
+        "fileName": "india",
+        "difficulty": "facil",
+        "possibleSolutions": ["india"]
+    },
+    {
+        "fileName": "islandia",
+        "difficulty": "facil",
+        "possibleSolutions": ["iceland", "islandia"]
+    },
+    {
+        "fileName": "irlanda",
+        "difficulty": "facil",
+        "possibleSolutions": ["ireland", "irlanda"]
+    },
+    {
+        "fileName": "israel",
+        "difficulty": "facil",
+        "possibleSolutions": ["israel"]
+    },
+    {
+        "fileName": "japon",
+        "difficulty": "facil",
+        "possibleSolutions": ["japón", "japan", "japon"]
+    },
+    {
+        "fileName": "luxemburgo",
+        "difficulty": "facil",
+        "possibleSolutions": ["luxembourg", "lëtzebuerg", "luxemburgo"]
+    },
+    {
+        "fileName": "mejico",
+        "difficulty": "facil",
+        "possibleSolutions": ["méjico", "mexico", "méxico", "mejico"]
+    },
+    {
+        "fileName": "netherlands",
+        "difficulty": "facil",
+        "possibleSolutions": ["paises bajos", "países bajos", "holanda", "netherlands"]
+    },
+    {
+        "fileName": "noruega",
+        "difficulty": "facil",
+        "possibleSolutions": ["norway", "noruega"]
+    },
+    {
+        "fileName": "corea del norte",
+        "difficulty": "facil",
+        "possibleSolutions": ["corea del norte", "north korea", "corea del norte"]
+    },
+    {
+        "fileName": "nueva zelanda",
+        "difficulty": "facil",
+        "possibleSolutions": ["new zealand", "nueva zelanda"]
+    },
+    {
+        "fileName": "rusia",
+        "difficulty": "facil",
+        "possibleSolutions": ["russia", "rusia"]
+    },
+    {
+        "fileName": "sudafrica",
+        "difficulty": "facil",
+        "possibleSolutions": ["sudáfrica", "south africa", "sudafrica"]
+    },
+    {
+        "fileName": "corea del sur",
+        "difficulty": "facil",
+        "possibleSolutions": ["south korea", "corea del sur"]
+    },
+    {
+        "fileName": "españa",
+        "difficulty": "facil",
+        "possibleSolutions": ["spain", "españa"]
+    },
+    {
+        "fileName": "suecia",
+        "difficulty": "facil",
+        "possibleSolutions": ["sweden", "suecia"]
+    },
+    {
+        "fileName": "suiza",
+        "difficulty": "facil",
+        "possibleSolutions": ["switzerland", "suiza"]
+    },
+    {
+        "fileName":  "uganda",
+        "difficulty": "facil",
+        "possibleSolutions": ["uganda"]
+    },
+    {
+        "fileName": "reino unido",
+        "difficulty": "facil",
+        "possibleSolutions": ["united kingdom", "uk", "reino unido"]
+    },
+    {
+        "fileName": "estados unidos",
+        "difficulty": "facil",
+        "possibleSolutions": ["united states", "usa", "eeuu", "estados unidos"]
+    },
+    {
+        "fileName": "dinamarca",
+        "difficulty": "facil",
+        "possibleSolutions": ["denmark", "dinamarca"]
+    },
+    {
+        "fileName": "grecia",
+        "difficulty": "facil",
+        "possibleSolutions": ["greece", "grecia"]
+    },
+    {
+        "fileName": "alemania",
+        "difficulty": "facil",
+        "possibleSolutions": ["germany", "alemania"]
+    },
+    {
+        "fileName": "portugal",
+        "difficulty": "facil",
+        "possibleSolutions": ["portugal"]
+    },
+    {
+        "fileName": "nepal",
+        "difficulty": "facil",
+        "possibleSolutions": ["nepal"]
+    },
+    {
+        "fileName": "turquia",
+        "difficulty": "facil",
+        "possibleSolutions": ["turquía", "turkey", "turquia"]
+    },
+    {
+        "fileName": "argentina",
+        "difficulty": "facil",
+        "possibleSolutions": ["argentina"]
+    },
+    {
+        "fileName": "albania",
+        "difficulty": "normal",
+        "possibleSolutions": ["albania"]
+    },
+    {
+        "fileName": "andorra",
+        "difficulty": "facil",
+        "possibleSolutions": ["andorra"]
+    },
+    {
+        "fileName": "afghanistan",
+        "difficulty": "normal",
+        "possibleSolutions": ["afganistán", "afganistan", "afghanistan"]
+    },
+    {
+        "fileName": "austria",
+        "difficulty": "normal",
+        "possibleSolutions": ["austria"]
+    },
+    {
+        "fileName": "bangladesh",
+        "difficulty": "normal",
+        "possibleSolutions": ["banglades", "bangladesh", "bangladesh"]
+    },
+    {
+        "fileName": "belgica",
+        "difficulty": "normal",
+        "possibleSolutions": ["belgium", "bélgica", "belgica"]
+    },
+    {
+        "fileName": "belarus",
+        "difficulty": "normal",
+        "possibleSolutions": ["bielorrusia", "belarus"]
+    },
+    {
+        "fileName": "bulgaria",
+        "difficulty": "normal",
+        "possibleSolutions": ["bulgaria"]
+    },
+    {
+        "fileName": "chad",
+        "difficulty": "normal",
+        "possibleSolutions": ["chad republic", "república de chad", "republic of chad", "chad"]
+    },
+    {
+        "fileName": "ecuador",
+        "difficulty": "facil",
+        "possibleSolutions": ["ecuador"]
+    },
+    {
+        "fileName": "fiji",
+        "difficulty": "normal",
+        "possibleSolutions": ["fiji"]
+    },
+    {
+        "fileName": "el salvador",
+        "difficulty": "normal",
+        "possibleSolutions": ["el salvador"]
+    },
+    {
+        "fileName": "grenada",
+        "difficulty": "normal",
+        "possibleSolutions": ["grenada", "gwenad", "granada"]
+    },
+    {
+        "fileName": "grenada",
+        "difficulty": "normal",
+        "possibleSolutions": ["grenada", "gwenad", "granada"]
+    },
+    {
+        "fileName": "guatemala",
+        "difficulty": "normal",
+        "possibleSolutions": ["guatemala"]
+    },
+    {
+        "fileName": "guinea",
+        "difficulty": "normal",
+        "possibleSolutions": ["guinea", "republica de guinea"]
+    },
+    {
+        "fileName": "georgia",
+        "difficulty": "normal",
+        "possibleSolutions": ["georgia"],
+        "emoji": "🇬🇪"
+    },
+    {
+        "fileName": "grenada",
+        "difficulty": "normal",
+        "possibleSolutions": ["grenada", "gwenad", "granada"],
+        "emoji": "🇬🇩"
+    },
+    {
+        "fileName": "hungria",
+        "difficulty": "normal",
+        "possibleSolutions": ["hungria", "hungría", "hungary"],
+        "emoji": "🇭🇺"
+    },
+    {
+        "fileName": "indonesia",
+        "difficulty": "normal",
+        "possibleSolutions": ["indonesia"],
+        "emoji": "🇮🇩"
+    },
+    {
+        "fileName": "venezuela",
+        "difficulty": "normal",
+        "possibleSolutions": ["venezuela"],
+        "emoji": "🇻🇪"
+    },
+    {
+        "fileName": "islas cook",
+        "difficulty": "normal",
+        "possibleSolutions": ["islas cook", "cook islands"],
+        "emoji": "🇨🇰"
+    },
+    {
+        "fileName": "iran",
+        "difficulty": "normal",
+        "possibleSolutions": ["iran", "irán"],
+        "emoji": "🇮🇷"
+    },
+    {
+        "fileName": "iraq",
+        "difficulty": "normal",
+        "possibleSolutions": ["iraq", "irak"],
+        "emoji": "🇮🇶"
+    },
+    {
+        "fileName": "guyana",
+        "difficulty": "normal",
+        "possibleSolutions": ["guyana"],
+        "emoji": "🇬🇾"
+    },
+    {
+        "fileName": "kirguistan",
+        "difficulty": "normal",
+        "possibleSolutions": ["kirguistan", "kirguistán", "kyrgyzstan"],
+        "emoji": "🇰🇬"
+    },
+    {
+        "fileName": "jordan",
+        "difficulty": "normal",
+        "possibleSolutions": ["jordan", "jordania"],
+        "emoji": "🇯🇴"
+    },
+    {
+        "fileName": "kenia",
+        "difficulty": "normal",
+        "possibleSolutions": ["kenia", "kenya"],
+        "emoji": "🇰🇪"
+    },
+    {
+        "fileName": "latvia",
+        "difficulty": "normal",
+        "possibleSolutions": ["latvia"],
+        "emoji": "🇱🇻"
+    },
+    {
+        "fileName": "macedonia",
+        "difficulty": "normal",
+        "possibleSolutions": ["macedonia", "macedonia del norte", "north macedonia"],
+        "emoji": "🇲🇰"
+    },
+    {
+        "fileName": "monaco",
+        "difficulty": "normal",
+        "possibleSolutions": ["monaco", "mónaco"],
+        "emoji": "🇲🇨"
+    },
+    {
+        "fileName": "marshall",
+        "difficulty": "normal",
+        "possibleSolutions": ["marshall islands", "islas marshall"],
+        "emoji": "🇲🇭"
+    },
+    {
+        "fileName": "montenegro",
+        "difficulty": "normal",
+        "possibleSolutions": ["montenegro"],
+        "emoji": "🇲🇪"
+    },
+    {
+        "fileName": "morocco",
+        "difficulty": "normal",
+        "possibleSolutions": ["morocco", "marruecos"],
+        "emoji": "🇲🇦"
+    },
+    {
+        "fileName": "niger",
+        "difficulty": "normal",
+        "possibleSolutions": ["niger", "níger"],
+        "emoji": "🇳🇪"
+    },
+    {
+        "fileName": "oman",
+        "difficulty": "normal",
+        "possibleSolutions": ["oman", "omán"],
+        "emoji": "🇴🇲"
+    },
+    {
+        "fileName": "nigeria",
+        "difficulty": "normal",
+        "possibleSolutions": ["nigeria"],
+        "emoji": "🇳🇬"
+    },
+    {
+        "fileName": "papua new guinea",
+        "difficulty": "normal",
+        "possibleSolutions": ["papua new guinea", "papua nueva guinea", "papúa nueva guinea"],
+        "emoji": "🇵🇬"
+    },
+    {
+        "fileName": "paraguay",
+        "difficulty": "normal",
+        "possibleSolutions": ["paraguay"],
+        "emoji": "🇵🇾"
+    },
+    {
+        "fileName": "peru",
+        "difficulty": "normal",
+        "possibleSolutions": ["peru", "perú"],
+        "emoji": "🇵🇪"
+    },
+    {
+        "fileName": "poland",
+        "difficulty": "normal",
+        "possibleSolutions": ["polonia"],
+        "emoji": "🇵🇱"
+    },
+    {
+        "fileName": "samoa",
+        "difficulty": "normal",
+        "possibleSolutions": ["samoa"],
+        "emoji": "🇼🇸"
+    },
+    {
+        "fileName": "filipinas",
+        "difficulty": "normal",
+        "possibleSolutions": ["filipinas", "philippines"],
+        "emoji": "🇵🇭"
+    },
+    {
+        "fileName": "san marino",
+        "difficulty": "normal",
+        "possibleSolutions": ["san marino"],
+        "emoji": "🇸🇲"
+    }
+]

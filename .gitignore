@@ -1,0 +1,5 @@
+node_modules/
+src/config.js
+enchufar.bat
+db/
+src/config/emtconfig.js
