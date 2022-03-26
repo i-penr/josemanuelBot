@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const Discord = require ('discord.js');
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
   'aliases': ['dice'],
   'cooldown': 3000,
 
-  execute(msg, args, client) {
+  execute(msg, args) {
     const num = args[1];
     const res = Math.floor(Math.random() * Number(num)) + 1;
     const diceEmbed = new Discord.MessageEmbed();
@@ -20,7 +19,7 @@ module.exports = {
       diceEmbed.setTitle(`Dado de ${num} caras`)
         .setDescription(`Resultado: **${res}**`)
         .setColor('#FF0000');
-      
+
       msg.channel.send({ embeds: [diceEmbed] });
     }
   },

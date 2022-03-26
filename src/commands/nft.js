@@ -7,7 +7,7 @@ module.exports = {
   'aliases': [],
   'cooldown': 2000,
 
-  execute(msg, args, client) {
+  execute(msg, args) {
     executeImgCmd(msg, 'nft', args[1]);
   },
 };

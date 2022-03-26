@@ -8,7 +8,7 @@ module.exports = {
   'aliases': ['np', 'normalpill', 'dinner'],
   'cooldown': 3000,
 
-  async execute(msg, args, client) {
+  async execute(msg) {
     const user = msg.mentions.users.first();
     const foto = user ? user.avatarURL({ format: 'png', dynamic: true }) : msg.author.avatarURL({ format: 'png', dynamic: true });
     const canvas = Canvas.createCanvas(828, 826);

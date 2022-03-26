@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const Discord = require ('discord.js');
 const Canvas = require('canvas');
 
@@ -9,11 +8,11 @@ module.exports = {
   'aliases': ['mosntruo', 'monstro'],
   'cooldown': 3000,
 
-  async execute(msg, args, client) {
+  async execute(msg) {
 
     const user = msg.mentions.users.first();
 
-    let foto = user ? user.avatarURL({ format: 'png', dynamic: true }) : msg.author.avatarURL({ format: 'png', dynamic: true });
+    const foto = user ? user.avatarURL({ format: 'png', dynamic: true }) : msg.author.avatarURL({ format: 'png', dynamic: true });
 
     const canvas = Canvas.createCanvas(480, 278); // Tamño de la imagen canvas
     const ctx = canvas.getContext('2d');

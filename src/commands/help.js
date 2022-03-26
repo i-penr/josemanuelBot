@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const Discord = require('discord.js');
 const fs = require('fs');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')).sort();

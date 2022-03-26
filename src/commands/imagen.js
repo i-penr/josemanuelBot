@@ -9,7 +9,7 @@ module.exports = {
   'aliases': ['img'],
   'cooldowm': 5000,
 
-  async execute(msg, args, client) {
+  async execute(msg, args) {
 
     args.shift();
     const query = args.join(' ');
@@ -36,8 +36,7 @@ module.exports = {
         prevButton,
         nextButton,
         randButton,
-    );
-  
+      );
 
     if (!query) return msg.channel.send('No has puesto nada, man.');
 
@@ -59,58 +58,58 @@ module.exports = {
 
       // Extensible a otros códigos
       switch (response.statusCode) {
-        case 400: return message.channel.send('No se han encontrado imágenes.');
+      case 400: return message.channel.send('No se han encontrado imágenes.');
       }
 
       const $ = cheerio.load(responseBody);
-      const links = $("img");
+      const links = $('img');
 
       const urls = new Array(links.length).fill(0).map((e, i) => links.eq(i).attr('src'));
       if (!urls.length) return msg.channel.send('No se han encontrado imágenes');
 
       const imageEmbed = createNewImageEmbed('#008000', index, urls);
-      const message = await msg.reply({embeds: [imageEmbed], components: [row], allowedMentions: { repliedUser: false } });
+      const message = await msg.reply({ embeds: [imageEmbed], components: [row], allowedMentions: { repliedUser: false } });
 
 
       const filter = i => i.user.id === msg.author.id;
       const collector = message.createMessageComponentCollector({ filter, time: 60000, componentType: 'BUTTON' });
-        
+
       collector.on('collect', async button => {
         switch (button.customId) {
-          case 'prev':
-            await message.edit({ embeds: [createNewImageEmbed('#008000', --index, urls)], components: [row] });
-            break;
-          case 'next':
-            await message.edit({ embeds: [createNewImageEmbed('#008000', ++index, urls)], components: [row] });
-            break;
-          case 'rand':
-            index = Math.floor(Math.random() * urls.length);
-            await message.edit({ embeds: [createNewImageEmbed('#008000', index, urls)], components: [row] });
-            break;
+        case 'prev':
+          await message.edit({ embeds: [createNewImageEmbed('#008000', --index, urls)], components: [row] });
+          break;
+        case 'next':
+          await message.edit({ embeds: [createNewImageEmbed('#008000', ++index, urls)], components: [row] });
+          break;
+        case 'rand':
+          index = Math.floor(Math.random() * urls.length);
+          await message.edit({ embeds: [createNewImageEmbed('#008000', index, urls)], components: [row] });
+          break;
         }
 
         if (index === 0 && !prevButton.disabled) {
-          prevButton.setDisabled(true)
-          console.log('prev button disabled')
+          prevButton.setDisabled(true);
+          console.log('prev button disabled');
         }
 
         if (index > 0 && prevButton.disabled) {
           prevButton.setDisabled(false);
-          console.log('prev button enabled')
+          console.log('prev button enabled');
         }
 
-        if (index === urls.length-1 && !nextButton.disabled)
+        if (index === urls.length - 1 && !nextButton.disabled)
           nextButton.setDisabled(true);
-        
-        if (index < urls.length-1 && nextButton.disabled)
+
+        if (index < urls.length - 1 && nextButton.disabled)
           nextButton.setDisabled(false);
 
-        button.update({ components: [row]});
-        console.log(`Index: ${index}`)
+        button.update({ components: [row] });
+        console.log(`Index: ${index}`);
       });
-        
+
       collector.on('end', collected => console.log(`Collected ${collected.size} items`));
-      
+
     });
 
   },
@@ -118,9 +117,9 @@ module.exports = {
 
 function createNewImageEmbed(color, index, urls) {
   const newEmbed = new Discord.MessageEmbed()
-  .setColor(color)
-  .setFooter({ text: `Imagen ${index + 1}/${urls.length}` })
-  .setImage(urls[index]);
+    .setColor(color)
+    .setFooter({ text: `Imagen ${index + 1}/${urls.length}` })
+    .setImage(urls[index]);
 
   return newEmbed;
 }

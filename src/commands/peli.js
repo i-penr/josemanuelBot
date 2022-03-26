@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+// Just ignore this file, it's for the movie db
+
 const Discord = require ('discord.js');
 const mv = require('../../db/pelis/controllers/pelis');
 
@@ -13,8 +14,6 @@ module.exports = {
 
     let user = msg.mentions.users.first();
     if (!user) user = msg.author;
-
-    console.log("asdjfkldjsaklfjsdakl")
 
     const clubDelCineRole = msg.guild.roles.cache.get('771318047746031616');
 
@@ -74,8 +73,6 @@ module.exports = {
       mv.getLastFilmDate((peli) => {
         const diffTime = Math.abs(new Date(Date.now()) - peli[0].visualization_date);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-        console.log('hola')
 
         msg.channel.send(`Días sin peli: **${diffDays}**`);
       });

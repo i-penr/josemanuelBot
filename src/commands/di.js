@@ -5,11 +5,11 @@ module.exports = {
   'aliases': ['say'],
   'cooldown': 5000,
 
-  execute(msg, args, client) {
+  execute(msg, args) {
     args.shift();
     const text = args.join(' ');
     msg.delete();
-    
+
     if (!text) {
       msg.reply('Tienes que decirme algo primero');
     } else {

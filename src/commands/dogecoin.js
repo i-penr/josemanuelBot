@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const cheerio = require('cheerio');
 const request = require('request');
 const fs = require('fs');
@@ -10,7 +9,7 @@ module.exports = {
   'aliases': ['dc', 'doge'],
   'cooldown': 5000,
 
-  async execute(msg, args, client) {
+  async execute(msg) {
 
     const options = {
       url: 'https://coinmarketcap.com/currencies/dogecoin/',

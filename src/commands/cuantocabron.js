@@ -1,4 +1,5 @@
-const Discord = require('discord.js');const cheerio = require('cheerio');
+const Discord = require('discord.js');
+const cheerio = require('cheerio');
 const request = require('request');
 
 module.exports = {

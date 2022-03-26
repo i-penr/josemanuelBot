@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const Discord = require ('discord.js');
 const fetch = require('node-fetch');
 const config = require('../config/emtconfig');
@@ -11,7 +10,7 @@ module.exports = {
   'aliases': ['bus'],
   'cooldown': 10000,
 
-  async execute(msg, args, client) {
+  async execute(msg, args) {
 
     if (!args[1]) return msg.reply('No has puesto el número de parada');
 
@@ -31,7 +30,7 @@ module.exports = {
     await fetch(config.url + `transport/busemtmad/stops/${numStop}/detail/`, { method: 'GET', headers: config.headers })
       .then((res) => {
         if (!res.ok) {
-          sendErrorEmbed(busEmbed);
+          msg.channel.send(createErrorEmbed(busEmbed));
         } else { return res.json(); }
       })
       .then((json) => {
@@ -42,52 +41,50 @@ module.exports = {
 
         coords = json.data[0].stops[0].geometry.coordinates;
         console.log('coords: ' + coords);
-        
+
         map.render(coords, 1000)
           .then(() => map.image.save('../multimedia/map.png'))
           .catch((err) => console.error('ERROR: ' + err));
-    });
-
+      });
 
 
     // For the time to arrival
     await fetch(config.url + `transport/busemtmad/stops/${numStop}/arrives/`, { method: 'POST', headers: config.headers, body: config.raw, redirect: 'follow' })
-        .then((res) => {
-          if (!res.ok) {
-            sendErrorEmbed(busEmbed);
-          } else { return res.json(); }
-        })
-          .then((json) => {
-            if (!json) return;
-            const stopInf = json.data[0];
+      .then((res) => {
+        if (!res.ok) {
+          msg.channel.send(createErrorEmbed(busEmbed, res));
+        } else { return res.json(); }
+      })
+      .then((json) => {
+        if (!json) return;
+        const stopInf = json.data[0];
 
-            busEmbed.setTitle(`Parada ${stopInf.Arrive[0].stop}`)
-              .setColor('#2c7abf')
-              .setTimestamp();
+        busEmbed.setTitle(`Parada ${stopInf.Arrive[0].stop}`)
+          .setColor('#2c7abf')
+          .setTimestamp();
 
-            for (const arriveData of stopInf.Arrive) {
-              const min = Math.floor(arriveData.estimateArrive / 60);
-              const secs = arriveData.estimateArrive - min * 60;
-              let eta = `${min} min ${secs} segs`;
+        for (const arriveData of stopInf.Arrive) {
+          const min = Math.floor(arriveData.estimateArrive / 60);
+          const secs = arriveData.estimateArrive - min * 60;
+          let eta = `${min} min ${secs} segs`;
 
-              if (min == 0) { eta = '**>>**'; }
-              busEmbed.addField(`**Línea ${arriveData.line}**`, `${eta} (Aprox.)\n${arriveData.DistanceBus.toLocaleString().replace(/,/g, '.')} m`, true);
-            }
-            }).then(() => {
-              if (!noMap) {
-                const attachment = new Discord.MessageAttachment('../multimedia/map.png', 'sample.png');
-                busEmbed.setImage('attachment://sample.png');
-                msg.channel.send({ embeds: [busEmbed], files: [attachment] });
-              } else  msg.channel.send({ embeds: [busEmbed] });
-            })
-            .catch((err) => console.error(err));
+          if (min == 0) { eta = '**>>**'; }
+          busEmbed.addField(`**Línea ${arriveData.line}**`, `${eta} (Aprox.)\n${arriveData.DistanceBus.toLocaleString().replace(/,/g, '.')} m`, true);
+        }
+      }).then(() => {
+        if (!noMap) {
+          const attachment = new Discord.MessageAttachment('../multimedia/map.png', 'sample.png');
+          busEmbed.setImage('attachment://sample.png');
+          msg.channel.send({ embeds: [busEmbed], files: [attachment] });
+        } else msg.channel.send({ embeds: [busEmbed] });
+      })
+      .catch((err) => console.error(err));
   },
 };
 
 
-function sendErrorEmbed(embed) {
-  embed.setTitle(`ERROR ${res.status}`)
-  embed.setDescription(res.statusText)
+function createErrorEmbed(embed, res) {
+  embed.setTitle(`ERROR ${res.status}`);
+  embed.setDescription(res.statusText);
   embed.setColor([255, 0, 0]);
-  msg.channel.send(embed);
 }
