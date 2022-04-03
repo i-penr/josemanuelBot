@@ -406,14 +406,14 @@
     {
         "fileName": "poland",
         "difficulty": "normal",
-        "possibleSolutions": ["polonia"],
+        "possibleSolutions": ["poland", "polonia"],
         "emoji": "🇵🇱"
     },
     {
-        "fileName": "samoa",
+        "fileName": "taiwan",
         "difficulty": "normal",
-        "possibleSolutions": ["samoa"],
-        "emoji": "🇼🇸"
+        "possibleSolutions": [],
+        "emoji": "🇹🇼"
     },
     {
         "fileName": "filipinas",
@@ -426,5 +426,335 @@
         "difficulty": "normal",
         "possibleSolutions": ["san marino"],
         "emoji": "🇸🇲"
+    },
+    {
+        "fileName": "saudi arabia",
+        "difficulty": "normal",
+        "possibleSolutions": ["saudi arabia", "arabia saudita", "arabia saudi", "arabia saudí"],
+        "emoji": "🇸🇦"
+    },
+    {
+        "fileName": "seychelles",
+        "difficulty": "normal",
+        "possibleSolutions": ["seychelles"],
+        "emoji": "🇸🇨"
+    },
+    {
+        "fileName": "somalia",
+        "difficulty": "normal",
+        "possibleSolutions": ["somalia"],
+        "emoji": "🇸🇴"
+    },
+    {
+        "fileName": "sri lanka",
+        "difficulty": "normal",
+        "possibleSolutions": ["sri lanka"],
+        "emoji": "🇱🇰"
+    },
+    {
+        "fileName": "sudan",
+        "difficulty": "normal",
+        "possibleSolutions": ["sudan", "sudán"],
+        "emoji": "🇸🇩"
+    },
+    {
+        "fileName": "swaziland",
+        "difficulty": "normal",
+        "possibleSolutions": ["swaziland", "eswatini", "suazilandia", "esuatini"],
+        "emoji": "🇸🇿"
+    },
+    {
+        "fileName": "siria",
+        "difficulty": "normal",
+        "possibleSolutions": ["siria", "syria"],
+        "emoji": "🇸🇾"
+    },
+    {
+        "fileName": "tailandia",
+        "difficulty": "normal",
+        "possibleSolutions": ["tailandia", "thailand"],
+        "emoji": "🇹🇭"
+    },
+    {
+        "fileName": "tunez",
+        "difficulty": "normal",
+        "possibleSolutions": ["tunez", "túnez", "tunisia"],
+        "emoji": "🇹🇳"
+    },
+    {
+        "fileName": "emiratos arabes unidos",
+        "difficulty": "normal",
+        "possibleSolutions": ["emiratos arabes unidos", "emiratos árabes unidos", "united arab emirates"],
+        "emoji": "🇦🇪"
+    },
+    {
+        "fileName": "ucrania",
+        "difficulty": "normal",
+        "possibleSolutions": ["ucrania", "ukraine"],
+        "emoji": "🇺🇦"
+    },
+    {
+        "fileName": "vaticano",
+        "difficulty": "normal",
+        "possibleSolutions": ["vaticano", "el vaticano", "ciudad del vaticano", "vatican city", "vatican city state", "estado de la ciudad del vaticano"],
+        "emoji": "🇻🇦"
+    },
+    {
+        "fileName": "vietnam",
+        "difficulty": "normal",
+        "possibleSolutions": ["vietnam"],
+        "emoji": "🇻🇳"
+    },
+    {
+        "fileName": "sahara occidental",
+        "difficulty": "normal",
+        "possibleSolutions": ["western sahara", "sahara occidental"],
+        "emoji": "🇪🇭"
+    },
+    {
+        "fileName": "zambia",
+        "difficulty": "normal",
+        "possibleSolutions": ["zambia"],
+        "emoji": "🇿🇲"
+    },
+    {
+        "fileName": "zimbabue",
+        "difficulty": "normal",
+        "possibleSolutions": ["zimbabue", "zimbabwe"],
+        "emoji": "🇿🇼"
+    },
+    {
+        "fileName": "uruguay",
+        "difficulty": "normal",
+        "possibleSolutions": ["uruguay"],
+        "emoji": "🇺🇾"
+    },
+    {
+        "fileName": "angola",
+        "difficulty": "normal",
+        "possibleSolutions": ["angola"],
+        "emoji": "🇦🇴"
+    },
+    {
+        "fileName": "armenia",
+        "difficulty": "normal",
+        "possibleSolutions": ["armenia"],
+        "emoji": "🇦🇲"
+    },
+    {
+        "fileName": "azerbaiyan",
+        "difficulty": "normal",
+        "possibleSolutions": ["azerbaiyan", "azerbaiyán", "azerbaijan"],
+        "emoji": "🇦🇿"
+    },
+    {
+        "fileName": "bolivia",
+        "difficulty": "normal",
+        "possibleSolutions": ["bolivia"],
+        "emoji": "🇧🇴"
+    },
+    {
+        "fileName": "colombia",
+        "difficulty": "normal",
+        "possibleSolutions": ["colombia"],
+        "emoji": "🇨🇴"
+    },
+    {
+        "fileName": "chile",
+        "difficulty": "normal",
+        "possibleSolutions": ["chile"],
+        "emoji": "🇨🇱"
+    },
+    {
+        "fileName": "croacia",
+        "difficulty": "normal",
+        "possibleSolutions": ["croacia", "croatia", "hrvatska"],
+        "emoji": "🇭🇷"
+    },
+    {
+        "fileName": "cuba",
+        "difficulty": "normal",
+        "possibleSolutions": ["cuba"],
+        "emoji": "🇨🇺"
+    },
+    {
+        "fileName": "dominica",
+        "difficulty": "normal",
+        "possibleSolutions": ["dominica"],
+        "emoji": "🇩🇲"
+    },
+    {
+        "fileName": "etiopia",
+        "difficulty": "normal",
+        "possibleSolutions": ["etiopia", "etiopía", "ethiopia", "república democrática federal de etiopía"],
+        "emoji": "🇪🇹"
+    },
+    {
+        "fileName": "honduras",
+        "difficulty": "normal",
+        "possibleSolutions": ["honduras"],
+        "emoji": "🇭🇳"
+    },
+    {
+        "fileName": "qatar",
+        "difficulty": "normal",
+        "possibleSolutions": ["qatar", "state of qatar", "estado de qatar"],
+        "emoji": "🇶🇦"
+    },
+    {
+        "fileName": "singapur",
+        "difficulty": "normal",
+        "possibleSolutions": ["singapur", "republica de singapur", "república de singapur", "singapore", "republic of singapore"],
+        "emoji": "🇸🇬"
+    },
+    {
+        "fileName": "eslovaquia",
+        "difficulty": "normal",
+        "possibleSolutions": ["slovakia", "eslovaquia"],
+        "emoji": "🇸🇰"
+    },
+    {
+        "fileName": "eslovenia",
+        "difficulty": "normal",
+        "possibleSolutions": ["eslovenia", "slovenia"],
+        "emoji": "🇸🇮"
+    },
+    {
+        "fileName": "turkmenistan",
+        "difficulty": "normal",
+        "possibleSolutions": ["turkmenistan", "turkmenistán"],
+        "emoji": "🇹🇲"
+    },
+    {
+        "fileName": "tuvalu",
+        "difficulty": "normal",
+        "possibleSolutions": ["tuvalu"],
+        "emoji": "🇹🇻"
+    },
+    {
+        "fileName": "niue",
+        "difficulty": "normal",
+        "possibleSolutions": ["niue"],
+        "emoji": "🇳🇺"
+    },
+    {
+        "fileName": "malasia",
+        "difficulty": "normal",
+        "possibleSolutions": ["malasia", "malaysia"],
+        "emoji": "🇲🇾"
+    },
+    {
+        "fileName": "liberia",
+        "difficulty": "normal",
+        "possibleSolutions": ["liberia"],
+        "emoji": "🇱🇷"
+    },
+    {
+        "fileName": "tanzania",
+        "difficulty": "normal",
+        "possibleSolutions": ["tanzania"],
+        "emoji": "🇹🇿"
+    },
+    {
+        "fileName": "san cristobal y nieves",
+        "difficulty": "normal",
+        "possibleSolutions": ["san cristobal y nieves", "san cristóbal y nieves", "saint kitts and nevis", "saint kitts & nevis"],
+        "emoji": "🇰🇳"
+    },
+    {
+        "fileName": "senegal",
+        "difficulty": "normal",
+        "possibleSolutions": ["senegal"],
+        "emoji": "🇸🇳"
+    },
+    {
+        "fileName": "algeria",
+        "difficulty": "normal",
+        "possibleSolutions": ["algeria", "república argelina democrática y popular", "people's democratic republic of argelia"],
+        "emoji": "🇩🇿"
+    },
+    {
+        "fileName": "barein",
+        "difficulty": "normal",
+        "possibleSolutions": ["barein", "baréin", "bahrain", "kingdom of bahrain", "reino de barein", "reino de baréin"],
+        "emoji": "🇧🇭"
+    },
+    {
+        "fileName": "antigua y barbuda",
+        "difficulty": "dificil",
+        "possibleSolutions": ["antigua y barbuda", "antigua and barbuda", "antigua & barbuda"],
+        "emoji": "🇦🇬"
+    },
+    {
+        "fileName": "bahamas",
+        "difficulty": "dificil",
+        "possibleSolutions": ["bahamas"],
+        "emoji": "🇧🇸"
+    },
+    {
+        "fileName": "belice",
+        "difficulty": "dificil",
+        "possibleSolutions": ["belice", "belize"],
+        "emoji": "🇧🇿"
+    },
+    {
+        "fileName": "benin",
+        "difficulty": "dificil",
+        "possibleSolutions": ["benin", "benín", "republic of benin", "república de benín"],
+        "emoji": "🇧🇯"
+    },
+    {
+        "fileName": "butan",
+        "difficulty": "dificil",
+        "possibleSolutions": ["bután", "bugan", "bhutan"],
+        "emoji": "🇧🇹"
+    },
+    {
+        "fileName": "bosnia",
+        "difficulty": "dificil",
+        "possibleSolutions": ["bosnia y herzegovina", "bosnia and herzegovina", "bosnia & herzegovina"],
+        "emoji": "🇧🇦"
+    },
+    {
+        "fileName": "botsuana",
+        "difficulty": "dificil",
+        "possibleSolutions": ["botsuana", "botswana"],
+        "emoji": "🇧🇼"
+    },
+    {
+        "fileName": "burkina",
+        "difficulty": "dificil",
+        "possibleSolutions": ["burkina faso"],
+        "emoji": "🇧🇫"
+    },
+    {
+        "fileName": "burundi",
+        "difficulty": "dificil",
+        "possibleSolutions": ["burundi"],
+        "emoji": "🇧🇮"
+    },
+    {
+        "fileName": "camboya",
+        "difficulty": "dificil",
+        "possibleSolutions": ["camboya", "reino de camboya", "cambodia", "kingodm of cambodia"],
+        "emoji": "🇰🇭"
+    },
+    {
+        "fileName": "cabo",
+        "difficulty": "dificil",
+        "possibleSolutions": ["cabo verde", "cape verde"],
+        "emoji": "🇨🇻"
+    },
+    {
+        "fileName": "camerun",
+        "difficulty": "dificil",
+        "possibleSolutions": ["camerun", "camerún", "cameroon"],
+        "emoji": "🇨🇲"
+    },
+    {
+        "fileName": "centroafricana",
+        "difficulty": "dificil",
+        "possibleSolutions": ["republica centroafricana", "central african republic", "república centroafricana"],
+        "emoji": "🇨🇫"
     }
 ]
