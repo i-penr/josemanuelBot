@@ -15,7 +15,7 @@ module.exports = {
       return msg.channel.send('No estás en una sala de voz...');
     }
 
-    if (!permissions.has('CONNECT') || !permissions.has('SPEAK')) {
+    if (!permissions.has('CONNECT')) {
       return msg.channel.send('No tengo permisos para entrar ahí');
     }
 
