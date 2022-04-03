@@ -1,30 +1,41 @@
+const DiscordVoice = require('@discordjs/voice');
 
 module.exports = {
 
   'name': 'vente',
-  'description': 'Jose Manuel viene',
+  'description': 'Jose Manuel viene al canal de voz',
   'aliases': [],
   'cooldown': 5000,
 
-  execute(msg, args, client) {
-    const voiceCh = msg.member.voice.channel;
-    if (voiceCh && !voiceCh.full && voiceCh.joinable) {
-      voiceCh.join()
-        .then(connection => {
-          msg.channel.send('Pa dentro');
-          connection.play('./../multimedia/aud/hola.mp3');
+  execute(msg) {
+    const voiceChannel = msg.member.voice.channel;
+    const permissions = voiceChannel.permissionsFor(msg.client.user);
 
-          const check = () => {
-            if (voiceCh.members.size === 1) {
-              msg.channel.send('No me dejen solo :(');
-              connection.disconnect();
-            }
-          };
-          client.setInterval(check, 60000);
-        })
-        .catch(error => console.log(error));
-    } else {
-      msg.channel.send('No estás en una sala de voz');
+    if (!voiceChannel) {
+      return msg.channel.send('No estás en una sala de voz...');
     }
+
+    if (!permissions.has('CONNECT') || !permissions.has('SPEAK')) {
+      return msg.channel.send('No tengo permisos para entrar ahí');
+    }
+
+    const connection = DiscordVoice.joinVoiceChannel({
+      channelId: voiceChannel.id,
+      guildId: msg.member.guild.id,
+      adapterCreator: msg.guild.voiceAdapterCreator,
+    });
+
+    connection.on('ready', () => {
+      msg.channel.send('Pa dentro');
+    });
+
+    const checkEmpty = setInterval(() => {
+      if (voiceChannel.members.size === 1) {
+        connection.disconnect();
+        connection.destroy();
+        clearInterval(checkEmpty);
+        msg.channel.send('No me dejen solo :(');
+      }
+    }, 60000);
   },
 };
