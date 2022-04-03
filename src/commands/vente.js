@@ -28,14 +28,5 @@ module.exports = {
     connection.on('ready', () => {
       msg.channel.send('Pa dentro');
     });
-
-    const checkEmpty = setInterval(() => {
-      if (voiceChannel.members.size === 1) {
-        connection.disconnect();
-        connection.destroy();
-        clearInterval(checkEmpty);
-        msg.channel.send('No me dejen solo :(');
-      }
-    }, 60000);
   },
 };

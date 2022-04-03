@@ -4,12 +4,32 @@ const fs = require('fs');
 const schedule = require('node-schedule');
 const fetch = require('node-fetch');
 const emtconfig = require('./config/emtconfig');
+const DiscordVoice = require('@discordjs/voice');
 
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_VOICE_STATES] });
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter((file) => file.endsWith('.js'));
 const talkedRecently = new Set();
 
+
+// Automatic disconnection when alone in vc
+client.on('voiceStateUpdate', (oldVs, newVs) => {
+  // There is no method to check whether the voiceStateUpdate is a disconnection, so I just check if the new voice channel is a new one or not
+  if (!newVs.channel) {
+    const connection = DiscordVoice.getVoiceConnection(oldVs.guild.id);
+
+    if (!connection) return;
+
+    if (connection.channelId === oldVs.channelID) {
+      if (oldVs.channel.members.size === 1) {
+        setTimeout(() => {
+          connection.disconnect();
+          connection.destroy();
+        }, 60000);
+      }
+    }
+  }
+});
 
 client.on('ready', () => {
 
