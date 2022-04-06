@@ -16,13 +16,14 @@ module.exports = {
     const song = ytdl(playlist.items[i].shortUrl);
     const resource = DiscordVoice.createAudioResource(song);
     const player = DiscordVoice.createAudioPlayer();
+    const permissions = voiceChannel.permissionsFor(msg.client.user);
 
     if (!voiceChannel) {
       return msg.channel.send('No estás en una sala de voz...');
     }
 
-    if (!voiceChannel) {
-      return msg.channel.send('No estás en una sala de voz...');
+    if (!permissions.has('CONNECT') || !permissions.has('SPEAK')) {
+      return msg.channel.send('No tengo permisos para entrar ahí');
     }
 
     const connection = DiscordVoice.joinVoiceChannel({
