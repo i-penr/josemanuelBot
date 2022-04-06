@@ -756,5 +756,54 @@
         "difficulty": "dificil",
         "possibleSolutions": ["republica centroafricana", "central african republic", "república centroafricana"],
         "emoji": "🇨🇫"
+    },
+    {
+        "fileName": "costa",
+        "difficulty": "dificil",
+        "possibleSolutions": ["costa de marfil","ivory coast", "côte d’ivoire"],
+        "emoji": "🇨🇮"
+    },
+    {
+        "fileName": "comoras",
+        "difficulty": "dificil",
+        "possibleSolutions": ["comoras", "comoros"],
+        "emoji": "🇰🇲"
+    },
+    {
+        "fileName": "congo",
+        "difficulty": "dificil",
+        "possibleSolutions": ["republica democratica del congo", "democratic republic of the congo", "república democrática del congo", "republica democrática del congo", "república democratica del congo"],
+        "emoji": "🇨🇩"
+    },
+    {
+        "fileName": "djibouti",
+        "difficulty": "dificil",
+        "possibleSolutions": ["yibuti", "djibouti"],
+        "emoji": "🇩🇯"
+    },
+    {
+        "fileName": "dominica",
+        "difficulty": "dificil",
+        "possibleSolutions": ["dominica"],
+        "emoji": "🇩🇲"
+    },
+    {
+        "fileName": "timor",
+        "difficulty": "dificil",
+        "possibleSolutions": ["timor oriental", "timor-leste", "east timor"],
+        "emoji": "🇹🇱"
+    },
+    {
+        "fileName": "guinea",
+        "difficulty": "dificil",
+        "possibleSolutions": ["guinea ecuatorial", "equatorial guinea"],
+        "emoji": "🇬🇶"
+    },
+    {
+        "fileName": "eritrea",
+        "difficulty": "dificil",
+        "possibleSolutions": ["eritrea"],
+        "emoji": "🇪🇷"
     }
+
 ]

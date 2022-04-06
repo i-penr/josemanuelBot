@@ -15,7 +15,8 @@ module.exports = {
       .setColor('#990EEF')
       .setTitle(msg.author.username + ' - ¿De dónde es esta bandera?')
       .setDescription('Simplemente envía un mensaje con el nombre del sitio')
-      .setImage('attachment://bandera.png');
+      .setImage('attachment://bandera.png')
+      .setFooter({ text: 'Tienes **30** segundos' });
 
     msg.reply({ embeds: [flagEmbed], files: [attachment] });
     awaitForResponse(msg, randomImage.possibleSolutions);
@@ -44,6 +45,9 @@ function awaitForResponse(msg, possibleSolutions) {
           m.channel.send(`Respuestas válidas: **${possibleSolutions.toString().split(',').join(', ')}**`);
         }
       }
+    }).catch((e) => {
+      // no input was received
+      if (e) msg.channel.send(`Lo siento, se te ha acabado el tiempo.\nRespuestas válidas: **${possibleSolutions.toString().split(',').join(', ')}**`);
     });
 }
 
