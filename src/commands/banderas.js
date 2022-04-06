@@ -16,7 +16,7 @@ module.exports = {
       .setTitle(msg.author.username + ' - ¿De dónde es esta bandera?')
       .setDescription('Simplemente envía un mensaje con el nombre del sitio')
       .setImage('attachment://bandera.png')
-      .setFooter({ text: 'Tienes **30** segundos' });
+      .setFooter({ text: 'Tienes 30 segundos' });
 
     msg.reply({ embeds: [flagEmbed], files: [attachment] });
     awaitForResponse(msg, randomImage.possibleSolutions);

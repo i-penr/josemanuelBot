@@ -412,7 +412,7 @@
     {
         "fileName": "taiwan",
         "difficulty": "normal",
-        "possibleSolutions": [],
+        "possibleSolutions": ["taiwan"],
         "emoji": "🇹🇼"
     },
     {
@@ -484,7 +484,7 @@
     {
         "fileName": "emiratos arabes unidos",
         "difficulty": "normal",
-        "possibleSolutions": ["emiratos arabes unidos", "emiratos árabes unidos", "united arab emirates"],
+        "possibleSolutions": ["emiratos arabes unidos", "emiratos árabes unidos", "united arab emirates", "eau"],
         "emoji": "🇦🇪"
     },
     {
@@ -766,7 +766,7 @@
     {
         "fileName": "comoras",
         "difficulty": "dificil",
-        "possibleSolutions": ["comoras", "comoros"],
+        "possibleSolutions": ["comoras", "comoros", "islas comoros"],
         "emoji": "🇰🇲"
     },
     {
