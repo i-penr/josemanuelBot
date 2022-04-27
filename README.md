@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/ismaelpenrodriguez/josemanuelBot?branch=main)](https://bettercodehub.com/)
+
 # Jose Manuel Discord bot
 
 
