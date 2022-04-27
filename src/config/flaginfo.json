@@ -804,6 +804,12 @@
         "difficulty": "dificil",
         "possibleSolutions": ["eritrea"],
         "emoji": "🇪🇷"
+    },
+    {
+        "fileName": "santa lucia",
+        "difficulty": "dificil",
+        "possibleSolutions": ["santa lucia", "santa lucía", "st. lucia", "st lucia", "saint lucia"],
+        "emoji": "🇱🇨"
     }
 
 ]
