@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 
 module.exports = {
   'name': 'pfp',
