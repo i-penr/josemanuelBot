@@ -32,14 +32,15 @@ client.on('voiceStateUpdate', (oldVs, newVs) => {
 });
 
 client.on('ready', () => {
+  const gatoChannel = client.channels.cache.get('595718884288495759');
 
   emtAPILogin();
 
   client.user.setPresence({ activities:  [{ name: 'Hawaii: Part II', type: 'LISTENING' }] });
 
-  setupCmdHandler(client.channels.cache.get('595718884288495759'));
+  setupCmdHandler();
 
-  schedule.scheduleJob('5 45 * * * *', gatoPicha());
+  schedule.scheduleJob('5 45 * * * *', gatoPicha(gatoChannel));
 
   console.log('Connected');
 
