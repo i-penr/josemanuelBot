@@ -21,10 +21,7 @@ module.exports = {
     };
 
     request(options, function(error, response, responseBody) {
-      if (response.statusCode !== 200) { return msg.channel.send('Se ha caído la página o algo'); }
-      if (error) {
-        return;
-      }
+      if (error) return msg.channel.send('Se ha caído la página o algo');
 
       const $ = cheerio.load(responseBody);
 
