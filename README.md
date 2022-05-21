@@ -12,9 +12,11 @@ Also, some commands might not work, I recently updated the discord.js API to v13
 
 ## Missing files
 
-Finally, I wanted to say that obviously there is a config file missing (with the prefix, token and other info), so have that in mind in case you wanted to clone this (I don't see why you would, but feel free to do so). There is also a **db** folder missing including the movie database I talked about earliar (I might push it to the repo, but I am not sure yet). 
+Finally, I wanted to say that obviously there is a config file missing (with the prefix, token and other info), so have that in mind in case you wanted to clone this (I don't see why you would, but feel free to do so). There is also a **db** folder missing including the movie database I talked about earlier (I might push it to the repo, but I am not sure yet). 
 
 All the missing files can be seen in the .gitignore.
+
+Update: I've just decided to delete everything related to the movie database. I might upload it to another repo, but probably not. It was great for learning SQL, but right now is useless, as we don't add movies anymore :(.
 
 ## Conclusions
 
