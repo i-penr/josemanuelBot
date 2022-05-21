@@ -37,16 +37,9 @@ client.on('ready', () => {
 
   client.user.setPresence({ activities:  [{ name: 'Hawaii: Part II', type: 'LISTENING' }] });
 
-  commandFiles.forEach((file) => {
-    const command = require(`./commands/${file}`);
+  setupCmdHandler();
 
-    client.commands.set(command.name, command);
-    for (const index in command.aliases) {
-      client.commands.set(command.aliases[index], command);
-    }
-  });
-
-  schedule.scheduleJob('5 45 * * * *', () => { gatoPicha(); });
+  schedule.scheduleJob('5 45 * * * *', gatoPicha());
 
   console.log('Connected');
 
@@ -61,7 +54,7 @@ client.on('messageCreate', (msg) => {
 
   if (!client.commands.has(command)) return;
 
-  if (talkedRecently.has(msg.author)) return msg.channel.send('Hay cooldown XD (te jode)');
+  if (talkedRecently.has(msg.author)) return msg.channel.send('Hay cooldown, lo siento');
 
   try {
     msg.channel.sendTyping().then(() => {
@@ -74,6 +67,8 @@ client.on('messageCreate', (msg) => {
   }
 
 });
+
+client.login(config.token);
 
 
 function gatoPicha() {
@@ -120,4 +115,13 @@ function emtAPILogin() {
     .catch((err) => console.error(err));
 }
 
-client.login(config.token);
+function setupCmdHandler() {
+  commandFiles.forEach((file) => {
+    const command = require(`./commands/${file}`);
+
+    client.commands.set(command.name, command);
+    for (const index in command.aliases) {
+      client.commands.set(command.aliases[index], command);
+    }
+  });
+}
