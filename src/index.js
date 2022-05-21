@@ -37,7 +37,7 @@ client.on('ready', () => {
 
   client.user.setPresence({ activities:  [{ name: 'Hawaii: Part II', type: 'LISTENING' }] });
 
-  setupCmdHandler();
+  setupCmdHandler(client.channels.cache.get('595718884288495759'));
 
   schedule.scheduleJob('5 45 * * * *', gatoPicha());
 
@@ -71,8 +71,7 @@ client.on('messageCreate', (msg) => {
 client.login(config.token);
 
 
-function gatoPicha() {
-  const gatoChannel = client.channels.cache.get('595718884288495759');
+function gatoPicha(gatoChannel) {
   const gatoChance = Math.floor(Math.random() * 10000) + 1;
 
   console.log(`[gatoconlapichatiesa] gatoChance = ${gatoChance}`);
