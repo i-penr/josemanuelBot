@@ -40,7 +40,7 @@ client.on('ready', () => {
 
   setupCmdHandler();
 
-  schedule.scheduleJob('5 45 * * * *', gatoPicha(gatoChannel));
+  schedule.scheduleJob('5 45 * * * *', function() { gatoPicha(gatoChannel); });
 
   console.log('Connected');
 
@@ -75,7 +75,7 @@ client.login(config.token);
 function gatoPicha(gatoChannel) {
   const gatoChance = Math.floor(Math.random() * 10000) + 1;
 
-  console.log(`[gatoconlapichatiesa] gatoChance = ${gatoChance}`);
+  console.log(`[gatoconlapichatiesa] gatoChance = ${gatoChance} (${new Date()})`);
 
   switch (gatoChance) {
   case 1:
