@@ -28,7 +28,7 @@
     "node-schedule": "^1.3.3",
     "opusscript": "^0.0.8",
     "request": "^2.88.2",
-    "sharp": "^0.30.0",
+    "sharp": "^0.30.5",
     "simple-youtube-api": "^5.2.1",
     "spotify-url-info": "^2.2.3",
     "staticmaps": "^1.8.0",
