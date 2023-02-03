@@ -20,7 +20,9 @@ module.exports = {
       },
     };
 
-    request(options, function(error, responseBody) {
+    request(options, function(error, response, responseBody) {
+      console.log('[img]', response.statusCode);
+
       if (error) {
         return;
       }
@@ -38,6 +40,8 @@ module.exports = {
       const title = $(titleHtml).text();
       const author = $(authorHtml).text();
       const icon = 'https://4.bp.blogspot.com/-IKfX7umyfRM/UDeYai9abhI/AAAAAAAAKGs/AlWSNmc8I_U/s1600/Render+-+Crazy+Insane+Troll+Face+BaixeRenders.png';
+
+      console.log($);
 
       const imageEmbed = new Discord.MessageEmbed()
         .setColor('#808080')

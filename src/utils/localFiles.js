@@ -3,7 +3,7 @@ const request = require('request');
 
 module.exports = {
   async executeImgCmd(msg, folderName, userInput) {
-    const path = '../multimedia/img/' + folderName + '/';
+    const path = './multimedia/img/' + folderName + '/';
     const images = fs.readdirSync(path);
     const chance = Math.floor(Math.random() * images.length) + 1;
     const index = (Number(userInput) <= images.length && Number(userInput) > 0) ? Number(userInput) : chance;

@@ -25,13 +25,14 @@ module.exports = {
 
       const $ = cheerio.load(responseBody);
 
-      const priceValueUSD = Number($('.priceValue ').text().substring(1));
+      const priceValueUSD = Number($('.priceValue').text().substring(1));
+      console.log($('.priceValue').text().substring(1));
       const priceValueEUR = (priceValueUSD * 0.83180).toFixed(5);
-      const oldValue = Number(fs.readFileSync('./config/dogecoinInfo.txt'));
+      const oldValue = Number(fs.readFileSync('./src/config/dogecoinInfo.txt'));
       const greenTriangleEmoji = '<:green_triangle_up:807960723799277608>';
       let emoji = '';
 
-      fs.writeFile('./config/dogecoinInfo.txt', String(priceValueUSD), (err) => { if (err) console.log(err); });
+      fs.writeFile('./src/config/dogecoinInfo.txt', String(priceValueUSD), (err) => { if (err) console.log(err); });
 
       if (priceValueUSD < oldValue) {
         emoji = '🔻';

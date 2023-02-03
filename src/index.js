@@ -1,40 +1,15 @@
+require('dotenv').config();
 const Discord = require('discord.js');
-const config = require('./config');
 const fs = require('fs');
 const schedule = require('node-schedule');
-const fetch = require('node-fetch');
-const emtconfig = require('./config/emtconfig');
-const DiscordVoice = require('@discordjs/voice');
 
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_VOICE_STATES] });
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands').filter((file) => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./src/commands').filter((file) => file.endsWith('.js'));
 const talkedRecently = new Set();
-
-
-// Automatic disconnection when alone in vc
-client.on('voiceStateUpdate', (oldVs, newVs) => {
-  // There is no method to check whether the voiceStateUpdate is a disconnection, so I just check if the new voice channel is a new one or not
-  if (!newVs.channel) {
-    const connection = DiscordVoice.getVoiceConnection(oldVs.guild.id);
-
-    if (!connection) return;
-
-    if (connection.channelId === oldVs.channelID) {
-      if (oldVs.channel.members.size === 1) {
-        setTimeout(() => {
-          connection.disconnect();
-          connection.destroy();
-        }, 60000);
-      }
-    }
-  }
-});
 
 client.on('ready', () => {
   const gatoChannel = client.channels.cache.get('595718884288495759');
-
-  emtAPILogin();
 
   client.user.setPresence({ activities:  [{ name: 'Hawaii: Part II', type: 'LISTENING' }] });
 
@@ -48,14 +23,16 @@ client.on('ready', () => {
 
 client.on('messageCreate', (msg) => {
 
-  if (!msg.content.toLowerCase().startsWith(config.prefix) || msg.author.bot) return;
+  if (!msg.content.toLowerCase().startsWith(process.env.PREFIX) || msg.author.bot) return;
 
-  const args = msg.content.slice(config.prefix.length).split(/ +/);
+  const args = msg.content.slice(process.env.PREFIX.length).split(/ +/);
   const command = args[0].toLowerCase();
 
   if (!client.commands.has(command)) return;
 
   if (talkedRecently.has(msg.author)) return msg.channel.send('Hay cooldown, lo siento');
+
+  if (client.commands.get(command).disabled) return;
 
   try {
     msg.channel.sendTyping().then(() => {
@@ -69,7 +46,7 @@ client.on('messageCreate', (msg) => {
 
 });
 
-client.login(config.token);
+client.login(process.env.TOKEN);
 
 
 function gatoPicha(gatoChannel) {
@@ -99,22 +76,6 @@ function messageCooldown(user, cooldownTime) {
     talkedRecently.delete(user);
   }, cooldownTime);
 }
-
-function emtAPILogin() {
-  fetch(emtconfig.url + 'mobilitylabs/user/login/', { method: 'GET', headers: emtconfig.headers })
-    .then((res) => {
-      if (!res.ok) {
-        console.log('There was an error connecting to de MobilityLabs API' + res.status);
-      } else { return res.json(); }
-    })
-    .then((json) => {
-      if (!json) { return; }
-      emtconfig.headers.accessToken = json.data[0].accessToken;
-      console.log('Successfully logged in to EMT API with token: ' + emtconfig.headers.accessToken);
-    })
-    .catch((err) => console.error(err));
-}
-
 function setupCmdHandler() {
   commandFiles.forEach((file) => {
     const command = require(`./commands/${file}`);

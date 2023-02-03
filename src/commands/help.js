@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')).sort();
+const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js')).sort();
 
 module.exports = {
 
