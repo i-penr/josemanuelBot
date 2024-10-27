@@ -4,3 +4,4 @@ enchufar.bat
 db/
 src/config/emtconfig.js
 old/
+.env
