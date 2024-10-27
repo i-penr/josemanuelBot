@@ -25,8 +25,8 @@ module.exports = {
 
       const $ = cheerio.load(responseBody);
 
-      const priceValueUSD = Number($('.priceValue').text().substring(1));
-      console.log($('.priceValue').text().substring(1));
+      const priceValueUSD = Number($('.alignBaseline .base-text').text().substring(1));
+      console.log($('.alignBaseline .base-text').text().substring(1));
       const priceValueEUR = (priceValueUSD * 0.83180).toFixed(5);
       const oldValue = Number(fs.readFileSync('./src/config/dogecoinInfo.txt'));
       const greenTriangleEmoji = '<:green_triangle_up:807960723799277608>';
