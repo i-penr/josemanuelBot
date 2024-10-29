@@ -1,0 +1,7 @@
+**/node_modules
+.env.example
+.eslintrc.json
+.gitignore
+.README.node_modules
+.dockerignore
+Dockerfile

@@ -67,7 +67,7 @@ function gatoPicha(gatoChannel) {
 }
 
 function sendMsgWithAttachment(channel, imageName) {
-  channel.send({ files: [`../multimedia/img/${imageName}`] });
+  channel.send({ files: [`${__dirname}/../multimedia/img/${imageName}`] });
 }
 
 function messageCooldown(user, cooldownTime) {
