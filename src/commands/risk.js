@@ -47,7 +47,7 @@ function getRollType(roll) {
     },
     {
       condition: () => last === 0,
-      type: 'Epic 0',
+      type: 'EPIC 0',
       territories: 12,
       extraAction: 'extra turn',
     },
