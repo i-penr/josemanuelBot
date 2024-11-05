@@ -5,22 +5,26 @@ module.exports = {
   'aliases': [],
   'cooldown': 2000,
 
-  execute(msg, args) {
+  async execute(msg, args) {
     args.shift();
     const roll = msg.id;
     const text = args.join(' ');
-    const bonusStr = /\(([^)]+)\)/.exec(args.at(-1));
-    const bonus = bonusStr && !isNaN(Number(bonusStr[1])) ? Number(bonusStr[1]) : 0;
+    const bonus = getBonusFromText(text);
 
     if (text.length === 0) {
       return msg.reply('Falta la acción, colega...');
     }
 
-    const rollObj = getRollType(roll);
+    const reply = await msg.reply(generateRollString(text, bonus, roll));
 
-    msg.reply(`${text} \n${rollObj.rollMsg}\n\`roll\`: **${roll}**\n\`bonus\`: **${bonus}**\n**${rollObj.territories}** + **${bonus}** = **${rollObj.territories + bonus}**`);
+    listenForMessageEdits(msg.client, msg, reply);
   },
 };
+
+function getBonusFromText(text) {
+  const parentheses = (text.match(/\(([^)]+)\)/g))?.map((e) => removeParenthesesFromString(e)).filter((e) => !isNaN(Number(e)));
+  return parentheses ? Number(parentheses.at(-1)) : 0;
+}
 
 function getRollType(roll) {
   const last4 = roll.slice(-4);
@@ -77,4 +81,31 @@ function getRollType(roll) {
   }
 
   return { rollMsg: 'Invalid Roll', territories: 0 };
+}
+
+function generateRollString(text, bonus, roll) {
+  const rollObj = getRollType(roll);
+
+  return `${text} \n${rollObj.rollMsg}\n\`roll\`: **${roll}**\n\`bonus\`: **${bonus}**\n**${rollObj.territories}** + **${bonus}** = **${rollObj.territories + bonus}**`;
+}
+
+function removeParenthesesFromString(str) {
+  return str.replace(/[()]/g, '')
+}
+
+function listenForMessageEdits(client, msg, reply) {
+  const callback = (oldMessage, newMessage) => {
+    if (newMessage.id === msg.id) {
+      const text = newMessage.content.substr(newMessage.content.indexOf(" ") + 1);
+      const bonus = getBonusFromText(text);
+
+      reply.edit(generateRollString(text, bonus, msg.id));
+    }
+  }
+
+  client.on('messageUpdate', callback);
+
+  setTimeout(() => {
+    client.off('messageUpdate', callback);
+  }, 60000)
 }
