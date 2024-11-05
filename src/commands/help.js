@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js')).sort();
+const commandFiles = fs.readdirSync(`${__dirname}`).filter(file => file.endsWith('.js')).sort();
 
 module.exports = {
 
@@ -28,13 +28,13 @@ module.exports = {
       .setColor('#0099ff')
       .setTitle('Command list')
       .setAuthor(client.user.username, client.user.avatarURL)
-      /* .setThumbnail('https://i.imgur.com/wSTFkRM.png')
-      .setImage('https://i.imgur.com/wSTFkRM.png') */
       .setTimestamp()
       .setFooter(`Page ${page + 1}/${maxPage}`);
 
-    for (let i = page * MAX; i < commandFiles.length * page + MAX; i++) { // Sustituir commandFiles.length por MAX cuando haya más comandos
-      const command = require(`./${commandFiles[i]}`);
+    commandPage = commandFiles.slice(page * MAX, page*MAX+MAX)
+
+    for (files of commandPage) {
+      const command = require(`${__dirname}/${files}`);
       embed.addField(command.name, command.description, false);
     }
 
