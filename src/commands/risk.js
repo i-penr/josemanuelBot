@@ -23,7 +23,7 @@ module.exports = {
 
 function getBonusFromText(text) {
   const parentheses = (text.match(/\(([^)]+)\)/g))?.map((e) => removeParenthesesFromString(e)).filter((e) => !isNaN(Number(e)));
-  return parentheses ? Number(parentheses.at(-1)) : 0;
+  return parentheses.length > 0 ? Number(parentheses.at(-1)) : 0;
 }
 
 function getRollType(roll) {
