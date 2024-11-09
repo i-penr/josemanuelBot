@@ -2,8 +2,9 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const fs = require('fs');
 const schedule = require('node-schedule');
+const path = require('path');
 
-const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_VOICE_STATES] });
+const client = new Discord.Client({ intents: [Discord.GatewayIntentBits.Guilds] });
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./src/commands').filter((file) => file.endsWith('.js'));
 const talkedRecently = new Set();
@@ -11,16 +12,17 @@ const talkedRecently = new Set();
 client.on('ready', () => {
   const gatoChannel = client.channels.cache.get('595718884288495759');
 
-  client.user.setPresence({ activities:  [{ name: 'Hawaii: Part II', type: 'LISTENING' }] });
+  client.user.setPresence({ activities: [{ name: 'Hawaii: Part II', type: 'LISTENING' }] });
 
   setupCmdHandler();
 
-  schedule.scheduleJob('5 45 * * * *', function() { gatoPicha(gatoChannel); });
+  schedule.scheduleJob('5 45 * * * *', function () { gatoPicha(gatoChannel); });
 
   console.log('Connected');
 
 });
 
+// Command handler
 client.on('messageCreate', (msg) => {
 
   if (!msg.content.toLowerCase().startsWith(process.env.PREFIX) || msg.author.bot) return;
@@ -46,6 +48,52 @@ client.on('messageCreate', (msg) => {
 
 });
 
+// Interaction handler
+client.interactions = new Discord.Collection();
+
+const foldersPath = path.join(__dirname, 'interactions');
+const interactionFolders = fs.readdirSync(foldersPath);
+
+for (const folder of interactionFolders) {
+  const interactionsPath = path.join(foldersPath, folder);
+  const interactionFiles = fs.readdirSync(interactionsPath);
+
+  for (const file of interactionFiles) {
+    const filePath = path.join(interactionsPath, file);
+    const { interaction } = require(filePath);
+
+    if ('data' in interaction && 'execute' in interaction) {
+      client.interactions.set(interaction.data.name, interaction);
+    } else {
+      console.log(interaction)
+      console.log(`[WARNING] The interaction '${file}' is not well formed.`);
+    }
+  }
+}
+
+client.on('interactionCreate', async interaction => {
+  if (!interaction.isCommand()) return;
+
+  const executedCommand = interaction.client.interactions.get(interaction.commandName);
+
+    if (!executedCommand) {
+        console.error(`[ERROR] Command '${interaction.commandName}' does not exist.`);
+        return;
+    }
+
+    try {
+        await executedCommand.execute(interaction);
+    } catch (error) {
+        console.error(error);
+
+        if (interaction.replied || interaction.deferred) {
+            await interaction.followUp({ content: 'There was an error while executing this command', ephemeral: true });
+        } else {
+            await interaction.reply({ content: 'There was an error while executing this command', ephemeral: true })
+        }
+    }
+});
+
 client.login(process.env.TOKEN);
 
 
@@ -55,14 +103,14 @@ function gatoPicha(gatoChannel) {
   console.log(`[gatoconlapichatiesa] gatoChance = ${gatoChance} (${new Date()})`);
 
   switch (gatoChance) {
-  case 1:
-    sendMsgWithAttachment(gatoChannel, 'gatoAlt1.png');
-    break;
-  case 2:
-    sendMsgWithAttachment(gatoChannel, 'gatoAlt2.png');
-    break;
-  default:
-    sendMsgWithAttachment(gatoChannel, 'gatoOriginal.png');
+    case 1:
+      sendMsgWithAttachment(gatoChannel, 'gatoAlt1.png');
+      break;
+    case 2:
+      sendMsgWithAttachment(gatoChannel, 'gatoAlt2.png');
+      break;
+    default:
+      sendMsgWithAttachment(gatoChannel, 'gatoOriginal.png');
   }
 }
 
