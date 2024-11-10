@@ -4,7 +4,7 @@ const fs = require('fs');
 const schedule = require('node-schedule');
 const path = require('path');
 
-const client = new Discord.Client({ intents: [Discord.GatewayIntentBits.Guilds] });
+const client = new Discord.Client({ intents: [Discord.GatewayIntentBits.Guilds, Discord.GatewayIntentBits.GuildMessages, Discord.GatewayIntentBits.MessageContent] });
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./src/commands').filter((file) => file.endsWith('.js'));
 const talkedRecently = new Set();
