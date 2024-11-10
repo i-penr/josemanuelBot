@@ -41,9 +41,7 @@ module.exports = {
       const author = $(authorHtml).text();
       const icon = 'https://4.bp.blogspot.com/-IKfX7umyfRM/UDeYai9abhI/AAAAAAAAKGs/AlWSNmc8I_U/s1600/Render+-+Crazy+Insane+Troll+Face+BaixeRenders.png';
 
-      console.log($);
-
-      const imageEmbed = new Discord.MessageEmbed()
+      const imageEmbed = new Discord.EmbedBuilder()
         .setColor('#808080')
         .setImage(img)
         .setFooter({ text: author })

@@ -10,8 +10,8 @@ module.exports = {
 
   execute(msg) {
     const randomImage = banderas[Math.floor(Math.random() * banderas.length)];
-    const attachment = new Discord.MessageAttachment(`./multimedia/img/banderas/${randomImage.difficulty}/${randomImage.fileName}.png`, 'bandera.png');
-    const flagEmbed = new Discord.MessageEmbed()
+    const attachment = new Discord.AttachmentBuilder(`./multimedia/img/banderas/${randomImage.difficulty}/${randomImage.fileName}.png`, { name: 'bandera.png' });
+    const flagEmbed = new Discord.EmbedBuilder()
       .setColor('#990EEF')
       .setTitle(msg.author.username + ' - ¿De dónde es esta bandera?')
       .setDescription('Simplemente envía un mensaje con el nombre del sitio')

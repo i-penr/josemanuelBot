@@ -27,14 +27,14 @@ module.exports = {
     case 6:msg.reply('No sé, loco');break;
     case 7:msg.reply('AAAAAAAAAAAAAAAAAAAAaaaaAAAA');break;
     case 8:msg.reply('Sinceramente, no puedo responderte estoy así:');
-      msg.channel.send({ files: ['../multimedia/img/713.png'] });
+      msg.channel.send({ files: [`${__dirname}/../../multimedia/img/713.png`] });
       break;
     case 9:msg.reply('A ver, tú crees?');break;
     case 10:msg.reply('SISISISISI');break;
     case 11: {
       msg.reply('Por supuesto que **sí**').then((editMsg) => {
         setTimeout(()=> {
-          editMsg.edit(`${msg.author}, Por supuesto que **no**`);
+          editMsg.edit(`Por supuesto que **no**`);
         }, 3000);
       });
       break;

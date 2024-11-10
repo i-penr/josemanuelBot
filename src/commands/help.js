@@ -24,7 +24,7 @@ module.exports = {
     }
     page--;
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.EmbedBuilder()
       .setColor('#0099ff')
       .setTitle('Command list')
       .setAuthor(client.user.username, client.user.avatarURL)

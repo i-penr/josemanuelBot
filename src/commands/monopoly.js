@@ -9,6 +9,6 @@ module.exports = {
   'aliases': ['mp'],
 
   execute(msg) {
-    msg.channel.send({ files: [new Discord.MessageAttachment('../multimedia/img/monopoly.jpg')] });
+    msg.channel.send({ files: [new Discord.AttachmentBuilder('../multimedia/img/monopoly.jpg')] });
   },
 };

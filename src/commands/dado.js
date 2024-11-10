@@ -10,7 +10,7 @@ module.exports = {
   execute(msg, args) {
     const num = args[1];
     const res = Math.floor(Math.random() * Number(num)) + 1;
-    const diceEmbed = new Discord.MessageEmbed();
+    const diceEmbed = new Discord.EmbedBuilder();
 
 
     if(!num || isNaN(res)) {
