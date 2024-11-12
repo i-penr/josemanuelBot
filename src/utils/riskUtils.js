@@ -73,10 +73,11 @@ function removeParenthesesFromString(str) {
 function listenForMessageEdits(client, msg, reply) {
     const callback = (oldMessage, newMessage) => {
         if (newMessage.id === msg.id) {
-            const text = newMessage.content.substr(newMessage.content.indexOf(" ") + 1);
-            const bonus = getBonusFromText(text);
+            const newText = newMessage.content.substr(newMessage.content.indexOf(" ") + 1);
+            const oldText = oldMessage.content.substr(oldMessage.content.indexOf(" ") + 1);
+            const bonus = getBonusFromText(newText);
 
-            reply.edit(generateRollString(text, bonus, msg.id));
+            reply.edit(generateRollString(oldText, bonus, msg.id));
         }
     }
 
